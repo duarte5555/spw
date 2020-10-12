@@ -16,4 +16,4 @@ class Pet(models.Model):
         return str(self.id)
 
 class Meta:
-    db_table = "pet"
+    db_table = 'pet'
