@@ -1,0 +1,9 @@
+ativar ambiente virtual
+venv\Scripts\activate
+
+mudar de pasta
+cd sospet
+
+correr o projeto
+python manage.py runserver
+
