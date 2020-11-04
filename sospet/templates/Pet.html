@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container mp-4 mb-4">
 <h1 class="text-center">Detalhes do Pet</h1>
 
     <div class="row">
@@ -15,6 +15,12 @@
             <p>{{ pet.description }}</p>
             <h4>Contato</h4>
             <p><b>tel.:</b>{{ pet.phone }}</p>
+            <p><b>E-mail.:</b>{{ pet.email }}</p>
+
+            <a href="#">
+                <button type="button" class="btn btn-primary">Alterar</button>
+            </a>          
+            <button type="button" class="btn btn-danger">Excluir</button>
         </div>
     </div>
 </div>
