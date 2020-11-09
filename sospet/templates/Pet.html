@@ -2,9 +2,10 @@
 
 {% block content %}
 
-<div class="container mp-4 mb-4">
+
 <h1 class="text-center">Detalhes do Pet</h1>
 
+<div class="container mp-4 mb-4"></div>
     <div class="row">
         <div class="col-sm-4">
             <div style="border-color: green; border-style: solid; width: 356px; height: 300px;">
@@ -16,11 +17,12 @@
             <h4>Contato</h4>
             <p><b>tel.:</b>{{ pet.phone }}</p>
             <p><b>E-mail.:</b>{{ pet.email }}</p>
-
-            <a href="#">
-                <button type="button" class="btn btn-primary">Alterar</button>
-            </a>          
-            <button type="button" class="btn btn-danger">Excluir</button>
+            {% if request.user == pet.user %}
+                <a href="#">
+                    <button type="button" class="btn btn-primary">Alterar</button>
+                </a>          
+                <button type="button" class="btn btn-danger">Excluir</button>
+                {% endif %}
         </div>
     </div>
 </div>
