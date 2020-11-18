@@ -7,6 +7,11 @@ from .models import Pet
 
 @login_required(login_url='/login/')
 def register_pet(request):
+    pet_id = request.GET.get('id')
+    if pet_id:
+        pet = Pet.objects.get(id=pet_id)
+        if pet.user == request.user:
+        return render(request, 'register-pet.html', {'pet':pet})
     return render(request, 'register-pet.html')
 
 @login_required(login_url='/login/')
@@ -25,7 +30,8 @@ def set_pet(request):
 @login_required(login_url='/login/')
 def delete_pet(request, id):
     pet = Pet.objects.get(id=id)
-    pet.delete()
+    if pet.user == request.user:
+        pet.delete()
     return redirect('/')
 
 # Create your views here.
